@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Prediction Form | Career Compass</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin-top: 50px;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .brand {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .tagline {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        input[type="text"], input[type="submit"] {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 25px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        input[type="text"]:focus, input[type="submit"]:hover {
+            border-color: #007bff;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-control::placeholder {
+            color: #aaa;
+        }
+
+        .btn-primary:focus, .btn-primary.focus {
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2><i class="fas fa-compass"></i> Career Compass <span class="brand">Job Prediction</span></h2>
+    <p class="tagline">One-stop solution for all your career problems</p>
+
+    <form method="post">
+        {% csrf_token %}
+        
+        <div class="form-group">
+            <label for="skills">Skills (comma-separated):</label>
+            <input type="text" name="skills" class="form-control" placeholder="e.g., Python, Java, SQL" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="qualification">Qualification:</label>
+            <input type="text" name="qualification" class="form-control" placeholder="e.g., Bachelor's Degree" required>
+        </div>
+        
+        <input type="submit" value="Predict" class="btn btn-primary btn-block">
+    </form>
+</div>
+
+</body>
+</html>
